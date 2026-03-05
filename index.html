@@ -420,13 +420,27 @@
         /* ==================== 4. 比較表 ==================== */
         .comparison-wrapper {
             width: 100%;
+            max-width: 100%; /* 親要素の幅を突き破らないように制限 */
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             padding-bottom: 15px;
         }
 
+        /* スクロールバーを明示的に表示して操作しやすくする */
+        .comparison-wrapper::-webkit-scrollbar {
+            height: 6px;
+        }
+        .comparison-wrapper::-webkit-scrollbar-track {
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 10px;
+        }
+        .comparison-wrapper::-webkit-scrollbar-thumb {
+            background: rgba(255, 215, 0, 0.6);
+            border-radius: 10px;
+        }
+
         .comparison-table {
-            min-width: 500px; /* スマホ用に横幅を少し縮小 */
+            min-width: 560px; /* 確実にスクロール領域が生まれるよう幅を少し拡大 */
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
@@ -443,7 +457,16 @@
 
         .comparison-header { background: linear-gradient(90deg, #0d2b26, #13554e); border-bottom: 2px solid var(--kogane); }
 
-        .comparison-cell { padding: 15px 10px; text-align: center; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #fff; }
+        .comparison-cell { 
+            padding: 15px 10px; 
+            text-align: center; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 13px; 
+            color: #fff; 
+            word-break: keep-all; /* 文字の不要な折り返しを防ぎ、幅を保つ */
+        }
 
         .comparison-cell:first-child { text-align: left; justify-content: flex-start; padding-left: 15px; font-weight: 700; color: var(--asagi); background: rgba(255, 255, 255, 0.02); }
         
@@ -888,13 +911,13 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 30px;">
+            <div style="text-align: center; margin-top: 30px; position: relative; z-index: 10;">
                 <p style="font-size: 14px; line-height: 1.8; margin-bottom: 30px;">
                     糸の絡まりを見つけるだけでなく、<br>
                     それを解き、新しい良縁を結ぶための<br>
                     <strong>具体的な儀式、行動、タイミング</strong>を<br>すべてお伝えします。
                 </p>
-                <a href="https://subterra.base.shop/items/134557326" class="cta-button"><span>本鑑定で、縁を整える</span></a>
+                <a href="https://subterra.base.shop/items/134557326" class="cta-button" style="position: relative; z-index: 10; cursor: pointer;"><span>本鑑定で、縁を整える</span></a>
             </div>
         </div>
     </section>
@@ -955,8 +978,8 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://subterra.base.shop/items/134557326" class="cta-button"><span>七つの啓示を受け取る</span></a>
+            <div style="text-align: center; margin-top: 40px; position: relative; z-index: 10;">
+                <a href="https://subterra.base.shop/items/134557326" class="cta-button" style="position: relative; z-index: 10; cursor: pointer;"><span>七つの啓示を受け取る</span></a>
             </div>
         </div>
     </section>
